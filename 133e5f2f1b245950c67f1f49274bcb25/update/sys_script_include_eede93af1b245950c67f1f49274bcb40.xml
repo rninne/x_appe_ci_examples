@@ -17,9 +17,10 @@ Sizes.prototype = {
 		//small = 50
 		//medium = 100
 		//large = 200
-		//xlarge = 50
+		//xlarge = 400
+		//xxlarge = 800
 
-		return [25, 50, 100, 200, 400];
+		return [25, 50, 100, 200, 400, 800];
 	},
 
     type: 'Sizes'
