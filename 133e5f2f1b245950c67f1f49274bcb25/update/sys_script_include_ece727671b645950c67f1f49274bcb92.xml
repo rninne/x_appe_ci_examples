@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_appe_ci_examples.Orders</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>Orders</name>
+        <script><![CDATA[var Orders = Class.create();
+Orders.prototype = {
+    
+	sizes: [],
+	
+	initialize: function() {
+		this.sizes = new x_appe_ci_examples.Sizes().getSizes();
+    },
+		
+	processSmallOrder: function() {
+		this.processOrder(this.sizes[0]);
+	},
+	
+	processOrder: function(size) {
+		var gr = new GlideRecord("x_appe_ci_examples_orders");
+		
+		for(var i=0; i<size; i++) {
+			gr.initialize();
+			gr.insert();
+		}
+	},
+
+    type: 'Orders'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2022-07-14 02:18:52</sys_created_on>
+        <sys_id>ece727671b645950c67f1f49274bcb92</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Orders</sys_name>
+        <sys_package display_value="CI Examples" source="x_appe_ci_examples">133e5f2f1b245950c67f1f49274bcb25</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="CI Examples">133e5f2f1b245950c67f1f49274bcb25</sys_scope>
+        <sys_update_name>sys_script_include_ece727671b645950c67f1f49274bcb92</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2022-07-14 02:27:05</sys_updated_on>
+    </sys_script_include>
+</record_update>
